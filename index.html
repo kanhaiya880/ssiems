@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="procedure.css">
+  <link rel="stylesheet" href="profile-card.css">
+  <link rel="stylesheet" href="owl-noticeBoard.css">
+  <link rel="stylesheet" href="marquee.css">
+  <link rel="stylesheet" href="studentCorner.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Roboto:wght@500;700&display=swap"
+    rel="stylesheet">
+
+  <link href="footer.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0%;
+      padding: 0%;
+    }
+
+    .container-fluid {
+      margin: 0%;
+      padding: 0%;
+    }
+
+
+    .container-box-ppt,
+    .container-box {
+      padding: 50px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      box-shadow: -1px 1px 15px 4px rgba(0, 0, 0, 0.75);
+      -webkit-box-shadow: -1px 1px 15px 4px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: -1px 1px 15px 4px rgba(0, 0, 0, 0.75);
+      border-radius: 10px;
+    }
+
+    .container-box-ppt {
+      padding: 5px !important;
+      border-radius: 2px;
+    }
+
+    @media screen and (max-width:460px) {
+
+      .container-box {
+        padding: 30px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        box-shadow: -1px 1px 15px 4px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: -1px 1px 15px 4px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: -1px 1px 15px 4px rgba(0, 0, 0, 0.75);
+        border-radius: 3px;
+      }
+
+      .container-box-ppt {
+        padding: 2px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border-radius: 3px;
+      }
+
+      .carousel-item img {
+        border-radius: 2px;
+        width: 100% !important;
+      }
+    }
+
+    .carousel-item img {
+      border-radius: 0px;
+    }
+
+
+    .marquee {
+      padding: 3px;
+      background-color: white;
+      box-shadow: 5px 5px 5px 2px;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-size: 14px;
+    }
+
+    .section-name {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 16px;
+      color: brown;
+    }
+
+    .card-img img {
+      width: 14rem;
+      padding: 5px;
+      border-radius: 20px;
+    }
+
+    #spinner {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .5s ease-out, visibility 0s linear .5s;
+      z-index: 99999;
+    }
+
+    #spinner.show {
+      transition: opacity .5s ease-out, visibility 0s linear 0s;
+      visibility: visible;
+      opacity: 1;
+    }
+
+
+    .g-5,
+    .g-5 {
+      --bs-gutter-x: 0px !important;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Spinner Start -->
+  <div id="spinner"
+    class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+  </div>
+  <!-- Spinner End -->
+
+
+  <div class=" container-fluid container-nav">
+    <div id="header">
+      <div class="header-title">
+        <div class="title-sspi">
+          <div class="log " data-aos="fade-down" data-aos-easing="linear" data-aos-duration="800">
+            <img class="sspi-logo-img " src="ssiems_log.png" alt="">
+          </div>
+          <div class="name" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="800">
+            <div class="ws">MSPM's</div>
+            <h4 id="bigHeader">SHRI SHIVAJI INSTITUTE OF ENGINEERING AND MANAGEMENT STUDIES</h4>
+            <p>Approved by AICTE new delhi, affiliated to dbatu, loner.</p>
+          </div>
+        </div>
+
+        <nav>
+          <div class="nav-item" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-duration="800">
+            Home</div>
+          <div class="nav-item" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-duration="800">
+            Departments</div>
+          <div class="nav-item" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-duration="800">
+            Gallery</div>
+          <div class="nav-item" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-duration="800">
+            Infrastructure</div>
+          <div class="nav-item" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-duration="800">
+            Contact Us</div>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <section>
+    <div class="container-fluid card py-2">
+
+      <div class="container d-flex">
+
+        <marquee behavior="left" direction="">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum culpa laboriosam libero sed esse, a officiis
+          assumenda repellendus corrupti. Optio iusto cupiditate, beatae ea illo error veniam sed sunt veritatis.
+        </marquee>
+      </div>
+    </div>
+
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="container-box-ppt">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="1.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>First slide label</h5>
+                <p>Some representative placeholder content for the first slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="2.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Some representative placeholder content for the second slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="1.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container ">
+
+      <div class="row">
+        <div class="col-md-8 order-1">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="procedure">
+                <div class="section-title">
+                  <h2>Illuminating Minds, Empowering Lives: Bridging the Gap with Education's Light</h2>
+                </div>
+                <ul>
+                  <li>
+                    <div>
+                      <span id="circle">1</span>
+                      <div class="vertical-line"></div>
+                    </div>
+
+                    <div>
+                      <h4 id="procedure">Vision</h4>
+                      <p>Eliminating the darkness of ignorance from the lives of people living in age-long poverty and
+                        help proceed towards knowledge to achieve all around.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <span id="circle">2</span>
+                      <div class="vertical-line"></div>
+                    </div>
+
+                    <div>
+                      <h4 id="procedure">Value</h4>
+                      <p>Providing qualiy education to society and economically poor background classes,Bringing out
+                        educational and cultural development of rural population. </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <span id="circle">3</span>
+
+                    </div>
+
+                    <div>
+                      <h4 id="procedure">Mission</h4>
+                      <p>
+                        Providing standard facilities for Hostel Accomodation, Physical Education, etc.
+                        Creating resources and utilising them for educational upliftment of common people,
+
+                        Promoting intellectural, ethical and cultural development of society,
+                        Introducing technical and professional education for increasing employibility.</p>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="ms-5">
+                      <input type="button" class="btn  mybtn ms-4 " value="Download">
+                    </div>
+
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 order-md-last order-sm-first order-0  ">
+          <div class="owl-container mb-2 ">
+            <div class="owl-box">
+              <div class="owl-title">
+                <span>NOTICE BOARD</span>
+                <div class="custom-nav">
+
+                </div>
+              </div>
+              <div class="owl-carousel owl-theme courses">
+                <div class="owl-card position-relative overflow-hidden" style="width: auto;">
+                  <div class="owl-card-body">
+
+                    <p class="owl-card-text">Some quick example text to build on the card title and make up the bulk
+                      of the
+                      card's content.</p>
+                    <button type="button" id="owl-noticeBoard-btn"><i class="fa-regular fa-file-pdf"></i>
+                      Download</button>
+                  </div>
+                </div>
+                <div class="owl-card position-relative overflow-hidden" style="width: auto;">
+                  <div class="owl-card-body">
+
+                    <p class="owl-card-text">Some quick example text to build on the card title and make up the bulk
+                      of the
+                      card's content.</p>
+                    <button type="button" id="owl-noticeBoard-btn"><i class="fa-regular fa-file-pdf"></i>
+                      Download</button>
+                  </div>
+                </div>
+                <div class="owl-card position-relative overflow-hidden" style="width: auto;">
+                  <div class="owl-card-body">
+
+                    <p class="owl-card-text">Some quick example text to build on the card title and make up the bulk
+                      of the
+                      card's content.</p>
+                    <button type="button" id="owl-noticeBoard-btn"><i class="fa-regular fa-file-pdf"></i>
+                      Download</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="my-2 mt-md-3" id="marquee-container" data-aos="fade-up">
+            <div id="marquee-box">
+              <div id="marquee-title">
+                <span>NEWS</span>
+              </div>
+              <marquee id="myMarquee" behavior="scroll" direction="up">
+                <div class="news">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, pariatur? Excepturi,
+                  illum quae rem debitis suscipit quas ad. Harum, minus.</div> <br>
+                <div class="news">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, pariatur? Excepturi,
+                  illum quae rem debitis suscipit quas ad. Harum, minus.</div> <br>
+                <div class="news">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, pariatur? Excepturi,
+                  illum quae rem debitis suscipit quas ad. Harum, minus.</div> <br>
+                <div class="news">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, pariatur? Excepturi,
+                  illum quae rem debitis suscipit quas ad. Harum, minus.</div>
+              </marquee>
+            </div>
+          </div> -->
+
+          <div id="studentCorner-container " class="my-2 mt-md-3 ">
+            <div id="studentCorner-box">
+              <div id="studentCorner-title">
+                STUDENT CORNER
+              </div>
+              <studentCorner-box id="mystudentCorner">
+                <ul>
+                  <li>Provisional Merit list. <img src="new.gif" alt="" width="50x"> </li>
+                  <li>Final Merit list .</li>
+                  <li>First Year Engineering Admission 2023-24. <img src="new.gif" alt="" width="50x"> </li>
+                  <li>First Year Backlog Exam Form. <img src="new.gif" alt="" width="50x"> </li>
+                  <li>Backlog SE TE BE Exam Form. <img src="new.gif" alt="" width="50x"> </li>
+                  <li>LFill Regular Exam Form. <img src="new.gif" alt="" width="50x"> </li>
+                  <li>Fill Revaluation Form. <img src="new.gif" alt="" width="50x"> </li>
+                  <li>Fees Structure AY 2023-24.</li>
+                </ul>
+              </studentCorner-box>
+            </div>
+          </div>
+
+
+
+
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="container py-2">
+      <div class="profile-container" data-aos="fade-up">
+        <div class="profile-img">
+          <div class="profile-box">
+
+          </div>
+          <div class="profile-title">
+            <span>Shri. Prakashdada Solanke</span>
+            <p>President</p>
+          </div>
+
+
+        </div>
+        <div class="profile-content">
+          <p>
+            The establishment of Shri Shivaji Polytechnic Institute stands as a testament to the unwavering commitment
+            of Marathwada Shikshan Prasarak Mandal towards providing top-notch technical education. This institute
+            embodies the aspirations of countless parents who fervently wish to see their children receive the finest
+            education possible.
+
+            In an era where quality education has become the cornerstone of success, Shri Shivaji Polytechnic Institute
+            emerges as a beacon of academic excellence. With its dedicated faculty, state-of-the-art facilities, and
+            innovative teaching methodologies, the institute is poised to shape the future of its students in remarkable
+            ways.
+
+            Marathwada Shikshan Prasarak Mandal's visionary endeavor to establish this institute echoes the dreams and
+            aspirations of parents who envision a brighter future for their children. Recognizing that education is the
+            key that unlocks countless opportunities, the institute strives to provide an environment that fosters
+            holistic growth, intellectual curiosity, and practical skills.
+
+            As parents invest their hopes and dreams in the education of their children, Shri Shivaji Polytechnic
+            Institute recognizes this sacred trust and takes it upon itself to deliver on those expectations. The
+            institute not only imparts technical knowledge but also instills values that will guide students throughout
+            their lives.
+
+            Just as Shivaji Maharaj, a symbol of valor and wisdom.</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container py-2">
+      <div class="profile-container" data-aos="fade-up">
+        <div class="profile-img">
+          <div class="profile-box" style="background-image: url(sc.png);">
+
+          </div>
+          <div class="profile-title">
+            <span>Shri. Satish Chavan</span>
+            <p>Secretary</p>
+          </div>
+
+
+        </div>
+        <div class="profile-content">
+          <p>
+            Since its inception in 1959, the MSP Mandal has exhibited relentless dedication in the pursuit of its dual
+            objectives. The first goal involves bridging the gap in education accessibility by extending its reach to
+            the underprivileged and deserving students, thereby ensuring that education transcends economic barriers.
+            The second objective, equally paramount, revolves around delivering an unparalleled standard of education.
+            Through unwavering commitment and effort, the MSP Mandal has managed to not only make education accessible
+            to those at society's margins but has also elevated the caliber of education imparted. This remarkable
+            journey stands as a testament to the organization's unwavering commitment to both inclusivity and excellence
+            in education. </p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="container">
+      <div class="profile-container" data-aos="fade-up">
+        <div class="profile-img">
+          <div class="profile-box" style="background-image: url(st.png);">
+
+          </div>
+          <div class="profile-title">
+            <span>Dr.Shahid Thekiya</span>
+            <p>Principal</p>
+          </div>
+
+
+        </div>
+        <div class="profile-content">
+          <p>
+            In today's fast-paced world, the pervasive spirit of competition permeates every facet of our lives,
+            transcending boundaries and industries. The global stage presents us with an intricate web of challenges
+            that demand our attention. However, in the face of this intensity, our responsibility is to adopt an
+            engineer's mindset. We must meticulously analyze these challenges, viewing them as intricate problems
+            awaiting creative solutions. By synergizing our inherent potential and adeptly utilizing the resources at
+            our disposal, we can engineer success from the raw materials of adversity. This perspective empowers us to
+            not only confront the trials posed by competition but also to flourish in its midst. In embracing this
+            approach, we assume the roles of both artisans and architects, crafting a blueprint for achievement in a
+            world brimming with competition.</p>
+        </div>
+      </div>
+
+  </section>
+
+  <section>
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+      <div class="container py-5">
+        <div class="row g-5 ms-md-0 ms-5">
+          <div class="col-lg-4 col-md-6 d-flex justify-content-md-center">
+            <div class="footer-flex-child">
+              <h4 class="text-white mb-4">Our address</h4>
+              <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Shri Shivaji Polytechnic Institute, <br> Vasmat
+                Road,
+                Parbhani - 43140</p>
+              <p class="mb-2"><i class="fa fa-phone-alt me-3"></i> (+91) 808 727 1670 </p>
+              <p class="mb-2"><i class="fa fa-envelope me-3"></i> principal.sspi@gmail.com</p>
+              <div class="d-flex pt-3">
+                <a class="btn btn-square  rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-square  rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-square  rounded-circle me-2" href=""><i class="fab fa-youtube"></i></a>
+                <a class="btn btn-square  rounded-circle me-2" href=""><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 d-flex justify-content-md-center">
+            <div class="footer-flex-child">
+              <h4 class="text-white mb-4">Quick Links</h4>
+              <a class="btn btn-link" href="">Home</a>
+              <a class="btn btn-link" href="">Departments</a>
+              <a class="btn btn-link" href="">Gallery</a>
+              <a class="btn btn-link" href="">Infrastructure</a>
+              <a class="btn btn-link" href="">Contact Us</a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 d-flex justify-content-md-center">
+            <div class="footer-flex-child">
+              <h4 class="text-white mb-4">Opening Hours</h4>
+              <p class="mb-1">Monday - Saturday</p>
+              <h6 class="text-light">10:00 am - 5:30 pm</h6>
+              <!-- <p class="mb-1">Saturday</p>
+                <h6 class="text-light">09:00 am - 12:00 pm</h6> -->
+              <p class="mb-1">Sunday</p>
+              <h6 class="text-light">Closed</h6>
+            </div>
+          </div>
+          <!-- <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-4">Newsletter</h4>
+                <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                <div class="position-relative w-100">
+                  <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="">
+                    <button type="button" class="btn btn-light py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                </div>
+            </div> -->
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0 ">
+            &copy; <a class="fw-medium text-light text-decoration-none" href="#">ssiems</a>, All Right Reserved.
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            Designed By <a class="fw-medium text-light text-decoration-none" href="#">kanhaiya chaudhari</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Copyright End -->
+
+
+  </section>
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+    crossorigin="anonymous"></script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+  <script src="marquee.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+    integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    "use strict";
+
+    // Spinner
+    var spinner = function () {
+      var spinnerElement = document.getElementById('spinner');
+      if (spinnerElement) {
+        setTimeout(function () {
+          spinnerElement.classList.remove('show');
+        }, 1000);
+      }
+    };
+    spinner();
+
+    // Hide the spinner when the page finishes loading
+    window.addEventListener('load', function () {
+      var spinnerElement = document.getElementById('spinner');
+      if (spinnerElement) {
+        spinnerElement.style.display = 'none';
+      }
+    });
+
+    // Other JavaScript code...
+
+
+    AOS.init();
+
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      dots: false,
+      autoplay: true,
+      navContainer: '.custom-nav', // Specify the navigation container
+
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 1
+        },
+        1000: {
+          items: 1
+        }
+      }
+    })
+  </script>
+</body>
+</body>
+
+</html>

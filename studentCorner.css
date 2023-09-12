@@ -1,0 +1,50 @@
+#studentCorner-container {
+    display: flex;
+    justify-content: center;
+}
+
+#studentCorner-box {
+    width: 100%;
+    max-width: 550px;
+    height: 100%;
+    max-height: 600px !important ;
+
+    border: 1px solid  rgb(180, 180, 180);
+    border-radius: 5px;
+}
+
+#studentCorner-title {
+    display: flex;
+    justify-content: center;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgb(223, 223, 223);
+    background-color: rgb(109, 83, 255);
+     color:white
+ 
+
+}
+
+#studentCorner-content {
+    padding: 10px;
+    height: 300px;
+}
+
+#mystudentCorner  {
+    height: 100%;
+    max-height: 500px;
+    padding: 20px;
+}
+#mystudentCorner ul  {
+  list-style-type:decimal-leading-zero;
+ 
+  font-size: 17px;
+  margin: 15px;
+    
+}
+#mystudentCorner ul li {
+    
+    padding-bottom: 10px;    
+  }
