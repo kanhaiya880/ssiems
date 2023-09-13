@@ -37,6 +37,7 @@
     rel="stylesheet">
 
   <link href="footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="dateTime.css">
   <style>
     body {
       margin: 0%;
@@ -146,16 +147,21 @@
 
 
 
-  <div class="container-fluid bg-dark py-1">
+   <!-- date time -->
+   <div class="container-fluid bg-dark py-1">
     <div class="container">
       <div class="row">
-        <div class="d-flex text-white">
-          <img src="flag.jpg" alt="" width="40px"> &nbsp;&nbsp; &nbsp; &nbsp;
-          <span id="date"></span> &nbsp; |
+        <div class="d-flex text-white justify-content-end justify-content-lg-end date-box" >
+           
+          <span id="date" class="text-uppercase"></span> &nbsp; | &nbsp;
+          <span>CONATCT US : (+91) 9623394343</span>
         </div>
       </div>
     </div>
   </div>
+
+
+  <!-- Page header -->
   <div class=" container-fluid container-nav">
     <div id="header">
       <div class="header-title">
@@ -172,27 +178,34 @@
 
         <nav>
           <div class="nav-item" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-duration="800">
-            Home</div>
+            <a href="index.html">Home</a>
+          </div>
           <div class="nav-item" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-duration="800">
-            Departments</div>
+            <a href="">Departments</a>
+          </div>
           <div class="nav-item" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-duration="800">
-            Gallery</div>
+            <a href="gallary.html"> Gallery</a>
+          </div>
           <div class="nav-item" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-duration="800">
-            Infrastructure</div>
+            <a href="">Infrastructure</a>
+          </div>
           <div class="nav-item" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-duration="800">
-            Contact Us</div>
+            <a href="">Contact Us</a>
+          </div>
         </nav>
       </div>
     </div>
   </div>
+
+
   <section>
+
     <div class="container-fluid card py-2">
 
       <div class="container d-flex">
 
         <marquee behavior="left" direction="">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum culpa laboriosam libero sed esse, a officiis
-          assumenda repellendus corrupti. Optio iusto cupiditate, beatae ea illo error veniam sed sunt veritatis.
+          The establishment of Shri Shivaji Polytechnic Institute stands as a testament to the unwavering commitment of Marathwada Shikshan Prasarak Mandal towards providing top-notch technical education. This institute embodies the aspirations of countless parents who fervently wish to see their children receive the finest education possible.
         </marquee>
       </div>
     </div>
@@ -537,7 +550,7 @@
               <a class="btn btn-link" href="">Contact Us</a>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 d-flex justify-content-md-center">
+          <div class="col-lg-4 col-md-6 d-flex justify-content-md-center justify-content-start">
             <div class="footer-flex-child">
               <h4 class="text-white mb-4">Opening Hours</h4>
               <p class="mb-1">Monday - Saturday</p>
@@ -601,63 +614,12 @@
     integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+  <!-- moment library -->
 
+  <script src="momentjs.com_downloads_moment.js"></script>
+  <script src="momentjs.com_downloads_moment-with-locales.js"></script>
+  <script src="main.js"></script>
 
-    <script src="momentjs.com_downloads_moment.js"></script>
-    <script src="momentjs.com_downloads_moment-with-locales.js"></script>
-  <script>
-    "use strict";
-
-    // Spinner
-    var spinner = function () {
-      var spinnerElement = document.getElementById('spinner');
-      if (spinnerElement) {
-        setTimeout(function () {
-          spinnerElement.classList.remove('show');
-        }, 1000);
-      }
-    };
-    spinner();
-
-    // Hide the spinner when the page finishes loading
-    window.addEventListener('load', function () {
-      var spinnerElement = document.getElementById('spinner');
-      if (spinnerElement) {
-        spinnerElement.style.display = 'none';
-      }
-    });
-
-    // Other JavaScript code...
-
-
-    AOS.init();
-
-    $('.owl-carousel').owlCarousel({
-      loop: true,
-      margin: 10,
-      nav: true,
-      dots: false,
-      autoplay: true,
-      navContainer: '.custom-nav', // Specify the navigation container
-
-      responsiveClass: true,
-      responsive: {
-        0: {
-          items: 1
-        },
-        600: {
-          items: 1
-        },
-        1000: {
-          items: 1
-        }
-      }
-    });
-
-    let m=moment().format('MMMM Do YYYY');
-    document.getElementById('date').innerHTML=m;
-
-  </script>
 </body>
 </body>
 

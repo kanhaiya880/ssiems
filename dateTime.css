@@ -1,0 +1,10 @@
+.date-box{
+font-size: 14px;
+}
+
+@media screen and (max-width:600px)
+{
+    .date-box{
+        font-size: 10px;
+        }
+}

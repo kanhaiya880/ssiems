@@ -99,9 +99,15 @@ nav {
     row-gap: 5px;
   }
 }
+.nav-item a {
+  text-decoration: none;
+  color: white;
 
-.nav-item:hover {
+}
+
+.nav-item > a :hover {
   text-decoration: none;
 
   color: rgb(92, 73, 255);
 }
+
