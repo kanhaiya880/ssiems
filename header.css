@@ -105,9 +105,8 @@ nav {
 
 }
 
-.nav-item > a :hover {
+ .nav-item a:hover {
   text-decoration: none;
-
-  color: rgb(92, 73, 255);
+  color: rgb(217, 255, 0);
 }
 

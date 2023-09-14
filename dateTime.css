@@ -1,10 +1,30 @@
 .date-box{
 font-size: 14px;
+align-items: center;
+}
+
+#flag{
+    width: 28px;
+    height: 18px;
+ 
+    
+    background-image: url(flag.jpg);
+    background-position: center;
+    background-size: cover;
+   
+    margin-right: 10px;
+
 }
 
 @media screen and (max-width:600px)
 {
     .date-box{
         font-size: 10px;
+        }
+
+        #flag{
+            width: 26px;
+            height: 16px;
+        
         }
 }
